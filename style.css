@@ -1,0 +1,298 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+h2 {
+  font-size: 2em;
+}
+
+h2::before {
+  content: "🐾​";
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* TOPO */
+.topo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url(./img/imagesgatocapa.png);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  padding-top: 200px;            /* controla a altura com segurança */
+  padding-bottom: 40px;
+}
+
+.topo h1 {
+  color: white;
+  font-size: 50px;
+  font-family: "Griffy", system-ui;
+    font-weight: 400;
+  font-style: normal;
+  margin-bottom: 100px;
+  text-shadow: 2px 2px 6px #000; /* melhor contraste */
+
+}
+
+@media (max-width: 768px) {
+  .topo {
+    height: 130px;
+    background-size: cover; /* mostra a imagem inteira */
+    background-position: top center;
+  }
+
+  .topo h1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .topo {
+    height: 110px;
+  }
+
+  .topo h1 {
+    font-size: 1.2rem;
+  }
+}
+
+/* ======= MENU STICKY ======= */
+.menu {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: linear-gradient(#000000, #ffffff00);
+  padding: 10px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+
+}
+
+.menu a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.menu .buscar {
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: none;
+}
+
+/* ======= FRASE ======= */
+.frase {
+  padding: 40px;
+  text-align: center;
+  font-size: 40px;
+}
+
+/* ======= SOBRE / PROPÓSITO ======= */
+.sobre-proposito {
+  font-size: 30px;
+  display: flex;
+  justify-content: space-around;
+  padding: 40px;
+  gap: 40px;
+}
+
+.sobre-proposito .bloco {
+  width: 40%;
+}
+
+/* ======= VERDADE ======= */
+.verdade {
+  font-size: 20px;
+  background: #254d67;
+  color: white;
+  padding: 50px 30px;
+  text-align: center;
+}
+
+.liturgia {
+  margin-top: 20px;
+  font-size: 0.75em;
+}
+
+.linhas-liturgia {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* BOTÃO OUÇA */
+.ouca {
+  padding: 10px 30px;
+  border-radius: 20px;
+  border: none;
+  background: #e0e1dd;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  transition: background-color 0.8s ease-in-out;
+}
+
+.ouca:hover {
+  background-color: #254d67;
+  color: white;
+}
+
+.ouca:hover::after {
+  content: "🔊​";
+  margin-left: 5px;
+}
+
+/* PARA O CARD */
+.resultados {
+  font-size: 30px;
+  background: #dcdcdc;
+  padding: 60px 20px;
+  margin-bottom: 0px;
+}
+
+.text-card {
+  font-size: 0.75em;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 40px;
+}
+
+.card {
+  height: 400px;
+  width: 250px;
+  background: #1e4c63;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  padding-bottom: 60px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.07);
+}
+.card .image {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  object-fit: cover;
+}
+
+.card .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 5px 5px 0 0;
+  filter: brightness(1.2) contrast(1.1)
+    drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.5));
+  transition: filter 0.4s ease;
+}
+
+.card .image:hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.123);
+  filter: grayscale(100%) blur(2px);
+}
+
+.card:hover::after {
+  content: "Adotado!";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #1e4c63;
+  color: #ffffff;
+  font-weight: normal;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+}
+
+.card .image:hover {
+  filter: grayscale(100%) blur(0.8px);
+}
+
+/* PARA O FAQ */
+
+.FAQ {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding: 60px 20px;
+  font-size: 30px;
+  background: #1e4c63;
+}
+
+.faq-title {
+  text-align: center;
+}
+
+ul li {
+  color: white;
+}
+ul li::marker {
+  content: "🐾​";
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* PARA O FOOTER */
+
+.footer {
+  padding: 20px 20px;
+  font-size: 1em;
+  text-align: center;
+  background: black;
+  color: white;
+}
+
+p,
+li {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
+
+
+@media (max-width: 600px) {
+  .cards {
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .FAQ {
+    font-size: 20px;
+    padding: 40px 10px;
+  }
+}
