@@ -44,35 +44,17 @@ h2::before {
 
 }
 
-@media (max-width: 768px) {
-  .topo {
-    height: 130px;
-    background-size: cover; /* mostra a imagem inteira */
-    background-position: top center;
-  }
-
-  .topo h1 {
-    font-size: 1.4rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .topo {
-    height: 110px;
-  }
-
-  .topo h1 {
-    font-size: 1.2rem;
-  }
-}
 
 /* ======= MENU STICKY ======= */
 .menu {
   position: sticky;
   top: 0;
   z-index: 1000;
-
   background: linear-gradient(#000000, #ffffff00);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(9.7px);
+-webkit-backdrop-filter: blur(9.7px);
+
   padding: 10px 20px;
 
   display: flex;
@@ -85,20 +67,24 @@ h2::before {
 .menu a {
   color: rgb(0, 0, 0);
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.6rem;
 }
 
 .menu .buscar {
   padding: 5px 10px;
   border-radius: 20px;
   border: none;
+  font-size: 1.5rem;
 }
 
 /* ======= FRASE ======= */
-.frase {
-  padding: 40px;
+#frase {
+    padding: 40px;
+  p{
   text-align: center;
-  font-size: 40px;
+  font-size: 30px;
+  }
+
 }
 
 /* ======= SOBRE / PROPÓSITO ======= */
@@ -271,28 +257,106 @@ ul li::marker {
 }
 
 p,
-li {
-  font-size: 1rem;
+li, span {
+  font-size: 1.5rem;
   line-height: 1.6;
 }
 
+/* ============================================================
+   RESPONSIVIDADE (ADICIONE AO FINAL DO SEU ARQUIVO CSS)
+   ============================================================ */
 
+/* Tablets e Celulares Grandes (max-width: 992px) */
+@media (max-width: 992px) {
+  .sobre-proposito {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
+  .sobre-proposito .bloco {
+    width: 90%; /* Blocos ocupam quase toda a largura */
+  }
 
-@media (max-width: 600px) {
+  .frase {
+    font-size: 30px;
+    padding: 20px;
+  }
+}
+
+/* Celulares (max-width: 768px) */
+@media (max-width: 768px) {
+  /* TOPO */
+  .topo {
+    padding-top: 120px;
+  }
+
+  .topo h1 {
+    font-size: 36px;
+    margin-bottom: 60px;
+  }
+
+  /* MENU - Transforma em coluna ou permite scroll horizontal */
+  .menu {
+    gap: 15px;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha se necessário */
+    padding: 15px;
+  }
+
+  .menu a {
+    font-size: 16px;
+  }
+  .menu .buscar {
+    padding: 5px 5px;
+  font-size: 10px
+}
+
+  /* VERDADE / LITURGIA */
+  .linhas-liturgia {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* CARDS */
   .cards {
     gap: 20px;
   }
 
   .card {
-    width: 90%;
-    height: auto;
+    width: 90%; /* Card quase tela cheia no mobile */
+    max-width: 300px;
+    height: auto; /* Deixa o conteúdo definir a altura */
+    padding-bottom: 30px;
+  }
+
+  .card .image {
+    height: 250px; /* Fixa altura da imagem no mobile para não esticar */
+  }
+
+  /* FAQ */
+  .FAQ {
+    padding: 40px 15px;
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 1.5em;
   }
 }
 
-@media (max-width: 600px) {
-  .FAQ {
-    font-size: 20px;
-    padding: 40px 10px;
+/* Celulares Pequenos (max-width: 480px) */
+@media (max-width: 480px) {
+  .topo h1 {
+    font-size: 28px;
+  }
+
+  .menu {
+    flex-direction: column; /* Menu vira uma lista vertical */
+    gap: 10px;
+  }
+
+  .menu .buscar {
+    width: 100%; /* Campo de busca ocupa tudo */
+    max-width: 200px;
   }
 }
